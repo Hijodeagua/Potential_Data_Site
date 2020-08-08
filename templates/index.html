@@ -47,7 +47,6 @@
             $(function () {
                 $('select').selectToAutocomplete();
                 $('form').submit(function () {
-                    alert($(this).serialize());
                     return false;
                 });
             });
@@ -59,8 +58,8 @@
 
 <body>
     <nav class="nonburger navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand mr-auto" href="{{ url_for('home') }}">
-            <h1 id="logo">Just a COVID Dashboard</h1>
+        <a class="navbar-data-links mr-auto" href="{{ url_for('home') }}">
+            <h1 id="logo"><strong>COVID in the United States</strong></h1>
         </a>
         <a class='navbar-data-links mr-auto' href="{{ url_for('home') }}">
             <h3 href="{{ url_for('home') }}">State/County Data</h3>
@@ -74,7 +73,7 @@
     </nav>
     <!-- Hamburger -->
     <nav class="hamburger navbar">
-        <a class="navbar-brand" href="#">Just a COVID Dashboard</a>
+        <a class="navbar-brand" id='logo' href="#">COVID in the United States</a>
         <button class="hamburger navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -110,7 +109,7 @@
                         <hr>
                         <form>
                             <select name="State" class='selector' id="state-selector" autofocus="autofocus"
-                                autocorrect="off" autocomplete="off" placeholder='Enter a State or Abbr.'>
+                                autocorrect="off" autocomplete="off" placeholder='Enter state or abb'>
                                 <option value='' data-alternative-spellings='US' selected>All States</option>
                                 <option value='us' data-alternative-spellings='US, The United States'>All States</option>
                                 <option value="Alabama" data-alternative-spellings='AL'>Alabama</option>
@@ -229,8 +228,8 @@
                 </div>
             </div>
             <div class='col-6 text-center'>
-                <div class='white col-12 no-pad'>
-                    <div class='col-12'>
+                <div class='white col-12 no-pad size-limit'>
+                    <div class='col-12' id='state-name-box'>
                         <h1 class="page-header" id='state-name'> Recent U.S. COVID-19 News</h1>
                         <hr>
                         <table class='table table-striped'>
