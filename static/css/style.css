@@ -49,6 +49,11 @@ hr{
 }
 /* End of styling */
 
+.nocell {
+    margin-bottom:15px;
+    padding:5px;
+}
+
 .navbar {
     background-color: white;
     outline: black;
@@ -66,9 +71,9 @@ hr{
 }
 
 #dropdownMenuButton{
-    background-color:white;
+    background-color:black;
     color: #6c757d;
-    border-color:white;
+    border-color:black;
     float:right;
 
 }
@@ -104,9 +109,12 @@ a:hover, #dropdownMenuButton:hover{
 .white{
     background-color: white;
     border-radius: 15px;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
 }
+
+.m-4 {
+    margin: 20 !important;
+  }
 
 .white-header{
     background-color: white;
@@ -199,6 +207,10 @@ table {
     min-width: 700px;
     min-height: 700px;
   }
+#collapsed-container {
+    display:none;
+}
+
 #state-name-box {
     height: 724px;
     overflow-y: auto;
@@ -248,11 +260,13 @@ table {
 
 .no-pad{
     padding:5px;
+    margin-bottom:15px;
 }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
       .hamburger{
           display: flex;
+          color: black;
       }
       .navbar{
           background-color: white !important;
@@ -268,20 +282,21 @@ table {
 
       .navbar-toggler{
           margin-right:20px;
+          color: black;
       }
 
       .navhead{
           background-color:white !important;
       }
 
-      .navbar-toggler-icon{
+      navbar-toggler-icon{
           width: 1em;
           height:1.25em;
-          color:black;
+          color:black !important;
       }
 
       .dropdown-menu{
-          background-color: white;
+          background-color: black;
           border:none;
       }
       .navbar-collapse{
@@ -290,6 +305,7 @@ table {
 
       .navbar-light, .navbar-toggler{
           border-color:black !important;
+          color: black;
       }
 
       .nav-item{
@@ -304,6 +320,25 @@ table {
       .nonburger{
           display: none;
       }
+      #map-tips-banner{
+        display: none !important;
+    }
+    #fix-container{
+        display:none;
+    }
+    #data-reliability-box{
+        display:none;
+    }
+  }
+
+  @media (min-width: 1000px){
+      .cell{
+          display:none;
+      }
+      #data-reliability-small{
+          display:none;
+      }
+
   }
   
 /* CSS from the Leaflet-Choropleth documentation */
@@ -338,3 +373,10 @@ table {
   .ui-helper-hidden-accessible {
     display: none;
 }
+#card-group{
+    display: flex;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
